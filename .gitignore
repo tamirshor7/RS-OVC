@@ -8,7 +8,7 @@ __pycache__/
 *.pyc
 
 # data / outputs
-data/
+
 outputs/
 logs/
 
