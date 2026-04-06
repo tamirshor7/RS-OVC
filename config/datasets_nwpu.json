@@ -1,0 +1,18 @@
+{
+  "train": [
+    {
+      "root": "data/NWPU-MOC/rgb",
+      "anno": "data/NWPU-MOC/train_class_split_curated_odvg.jsonl",
+      "label_map": "data/nwpu_label_map.json",
+      "dataset_mode": "odvg"
+    }
+  ],
+  "val": [
+    {
+      "root": "data/NWPU-MOC/rgb",
+      "anno": "data/NWPU-MOC/nwpu_test_class_split.json",
+      "label_map": "data/nwpu_label_map.json",
+      "dataset_mode": "coco"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# checkpoints
+best_rsovc_checkpoint/
+*.pt
+*.pth
+
+# python
+__pycache__/
+*.pyc
+
+# data / outputs
+data/
+outputs/
+logs/
+
+# misc
+.env

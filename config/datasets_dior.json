@@ -1,0 +1,18 @@
+{
+  "train": [
+      {
+      "root": "data/DIOR/shared_images",
+      "anno": "data/DIOR/train_split_curated_odvg.jsonl",
+      "label_map": "data/dior_label_map.json",
+      "dataset_mode": "odvg"
+    }
+  ],
+  "val": [
+  {
+      "root": "data/DIOR/shared_images",
+      "anno": "data/DIOR/dior_test_class_split.json",
+      "label_map": "data/dior_label_map.json",
+      "dataset_mode": "coco"
+    }
+  ]
+}
