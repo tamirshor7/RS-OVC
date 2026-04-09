@@ -43,8 +43,6 @@ conda activate rsovc
 ## Data
 
 We curate a designated dataset from a set of common aerial imagery object counting and detection dataset, and adapt them for our task of novel-class counting. 
-Our data can be downloaded from [Huggingface](hf_url) or created from original exisitng benchmarks according to the instructions below.
-
 ### Download Original Datasets
 To replicate creation of our curated dataset used in the paper, download the following public dataset
 * **NWPU-MOC**
