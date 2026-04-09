@@ -242,8 +242,10 @@ python main.py \
 ## Checkpoints
 
 RS-OVC trained checkpoints:
-👉 *[add link]*
 
+```bash
+wget -O checkpoint.pth https://huggingface.co/tamirshor/RSOVC/resolve/main/checkpoint.pth
+```
 ---
 
 ## Acknowledgments
