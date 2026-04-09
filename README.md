@@ -246,7 +246,7 @@ RS-OVC trained checkpoints:
 
 ---
 
-## Acknowledgment
+## Acknowledgments
 This work builds upon [CountGD](https://github.com/niki-amini-naieni/CountGD/).
 Our method extends its architecture and training framework, and parts of this codebase reuse and adapt components from the original implementation. 
 We thank the authors for publicly-releasing their code and enabling our work to build-upon theirs.
