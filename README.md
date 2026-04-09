@@ -5,7 +5,8 @@ Official Pytorch Implementation for the paper RS-OVC: Open-Vocabulary Counting f
   <img src="images/teaser.png" width="800"/>
 </p>
 
-**Tamir Shor<sup>1,2</sup>, George Leifman<sup>2</sup>, Genady Beryozkin<sup>2</sup>** <sup>1</sup>Technion – Israel Institute of Technology <sup>2</sup>Google Research
+**Tamir Shor<sup>1,2</sup>, George Leifman<sup>2</sup>, Genady Beryozkin<sup>2</sup>**
+<sup>1</sup>Technion – Israel Institute of Technology <sup>2</sup>Google Research
 
 Correspondence to: **[tamir.shor@campus.technion.ac.il](mailto:tamir.shor@campus.technion.ac.il)**
 
