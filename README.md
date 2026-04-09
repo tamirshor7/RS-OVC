@@ -1,5 +1,5 @@
 # RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data
-Official Pytorch Implementation for the paper RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data - an open-vocabulary object-counting model for remote-sensing data, [ICPR 2026](https://icpr2026.org/).
+Pytorch Implementation for the paper RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data - an open-vocabulary object-counting model for remote-sensing data, [ICPR 2026](https://icpr2026.org/).
 
 <p align="center">
   <img src="images/teaser.png" width="800"/>
