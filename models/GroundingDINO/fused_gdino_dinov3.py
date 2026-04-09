@@ -11,8 +11,8 @@ from torch import nn
 from torchvision.ops.boxes import nms
 from torchvision.ops import roi_align
 
-from CountGD.groundingdino.util import box_ops, get_tokenlizer
-from CountGD.groundingdino.util.misc import (
+from groundingdino.util import box_ops, get_tokenlizer
+from groundingdino.util.misc import (
     NestedTensor,
     get_world_size,
     inverse_sigmoid,
@@ -22,14 +22,13 @@ from CountGD.groundingdino.util.misc import (
 
 
 from .backbone import build_backbone
-from CountGD.models_inference.GroundingDINO.bertwarper import (
-    BertModelWarper,
-    generate_masks_with_special_tokens_and_transfer_map,
-)
-from .transformer import build_transformer
-from CountGD.models_inference.GroundingDINO.utils import MLP, ContrastiveEmbed
 
-from CountGD.models_inference.GroundingDINO.matcher import build_matcher
+from models.GroundingDINO.bertwarper import BertModelWarper,generate_masks_with_special_tokens_and_transfer_map
+
+from .transformer import build_transformer
+from models.GroundingDINO.utils import MLP, ContrastiveEmbed
+
+from models.GroundingDINO.matcher import build_matcher
 import numpy as np
 
 
@@ -37,7 +36,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoImageProcessor, AutoModel
-from CountGD.groundingdino.util.misc import NestedTensor
+from groundingdino.util.misc import NestedTensor
 from typing import Dict
 
 class DINOv3BackboneWrapper(nn.Module):

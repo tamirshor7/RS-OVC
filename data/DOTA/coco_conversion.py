@@ -7,6 +7,7 @@ from copy import deepcopy
 from typing import List, Dict
 from collections import defaultdict
 from tqdm import tqdm
+import argparse
 
 # --- Global DOTA Categories (Used for consistent ID mapping) ---
 DOTA_LABELS = (
@@ -298,17 +299,42 @@ def convert_dota_to_coco_class_split(
     return {'train': coco_train, 'val': coco_val, 'test': coco_test}
 
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
 
-DOTA_ROOT = "." 
-TEST_CLASSES = ['plane', 'baseball-diamond', 'bridge', 'storage-tank', 
-    'soccer-ball-field', 'roundabout',
-    'container', 'airport', 'chimney', 
-    'dam',
-    'wind-mill', 'container-crane'] 
+    parser.add_argument(
+        "--dota_root",
+        type=str,
+        required=True,
+        help="Path to DOTA root directory containing train/ and val/"
+    )
 
-convert_dota_to_coco_class_split(
-    dota_root_dir=DOTA_ROOT,
-    test_classes=TEST_CLASSES,
-    output_dir='.',
-    min_instance_per_class=4
-)
+    parser.add_argument(
+        "--min_instances",
+        type=int,
+        default=4,
+        help="Minimum instances per class per image"
+    )
+
+    parser.add_argument(
+        "--test_classes",
+        nargs="+",
+        default=[
+            'plane', 'baseball-diamond', 'bridge', 'storage-tank',
+            'soccer-ball-field', 'roundabout',
+            'container', 'airport', 'chimney',
+            'dam', 'wind-mill', 'container-crane'
+        ],
+        help="Classes assigned to test split"
+    )
+
+    args = parser.parse_args()
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    convert_dota_to_coco_class_split(
+        dota_root_dir=args.dota_root,
+        test_classes=args.test_classes,
+        output_dir=script_dir,
+        min_instance_per_class=args.min_instances
+    )

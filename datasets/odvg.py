@@ -9,7 +9,7 @@ import os, sys
 
 sys.path.append(os.path.dirname(sys.path[0]))
 
-import CountGD.datasets_inference.transforms as T
+import datasets.transforms as T
 
 
 class ODVGDataset(VisionDataset):

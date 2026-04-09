@@ -4,7 +4,7 @@ import math
 from copy import deepcopy
 from typing import List
 from collections import defaultdict
-
+import argparse
 
 
 def rescale_bbox_to_area_four(bbox_coco_format: List[int]) -> List[int]:
@@ -249,7 +249,7 @@ def convert_nwpu_moc_to_coco_class_split(
 
     # --- 4. Final Save ---
 
-    output_dir = '.'
+    output_dir = os.path.dirname(os.path.abspath(__file__))
     os.makedirs(output_dir, exist_ok=True)
     
     train_file = os.path.join(output_dir, f"nwpu_train_class_split.json")
@@ -268,16 +268,34 @@ def convert_nwpu_moc_to_coco_class_split(
     return
 
 # --- EXAMPLE USAGE (Manual Setup) ---
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
 
+    parser.add_argument(
+        "--nwpu_root",
+        type=str,
+        required=True,
+        help="Path to NWPU-MOC root directory (should contain class folders with jsons/)"
+    )
 
-RAW_JSON_DIRECTORY = "annotations"  
+    parser.add_argument(
+        "--min_instances",
+        type=int,
+        default=4,
+        help="Minimum instances per class per image"
+    )
 
-# Define the set of classes that will ONLY appear in the test set.
-TEST_CLASSES = ["stadium","airplane","boat","truck","house"] 
+    parser.add_argument(
+        "--test_classes",
+        nargs="+",
+        default=["stadium","airplane","boat","truck","house"],
+        help="Classes assigned to test split"
+    )
 
+    args = parser.parse_args()
 
-
-convert_nwpu_moc_to_coco_class_split(
-     annotations_root_dir=RAW_JSON_DIRECTORY,
-     test_classes=TEST_CLASSES,
-     min_instance_per_class=4)
+    convert_nwpu_moc_to_coco_class_split(
+        annotations_root_dir=args.nwpu_root,
+        test_classes=args.test_classes,
+        min_instance_per_class=args.min_instances
+    )

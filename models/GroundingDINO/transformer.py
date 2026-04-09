@@ -8,12 +8,12 @@ import torch
 import torch.utils.checkpoint as checkpoint
 from torch import Tensor, nn
 
-from CountGD.util.misc import inverse_sigmoid
+from util.misc import inverse_sigmoid
 
-from CountGD.models_inference.GroundingDINO.fuse_modules import BiAttentionBlock
+from models.GroundingDINO.fuse_modules import BiAttentionBlock
 from .ms_deform_attn import MultiScaleDeformableAttention as MSDeformAttn
-from CountGD.models_inference.GroundingDINO.transformer_vanilla import TransformerEncoderLayer
-from CountGD.models_inference.GroundingDINO.utils import (
+from models.GroundingDINO.transformer_vanilla import TransformerEncoderLayer
+from models.GroundingDINO.utils import (
     MLP,
     _get_activation_fn,
     _get_clones,

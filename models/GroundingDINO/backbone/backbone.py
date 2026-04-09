@@ -14,10 +14,10 @@ import torchvision
 from torch import nn
 from torchvision.models._utils import IntermediateLayerGetter
 
-from CountGD.util.misc import NestedTensor, is_main_process
+from util.misc import NestedTensor, is_main_process
 from transformers import AutoImageProcessor, AutoModel
-from CountGD.models_inference.GroundingDINO.backbone.position_encoding import build_position_encoding
-from CountGD.models_inference.GroundingDINO.backbone.swin_transformer import build_swin_transformer
+from models.GroundingDINO.backbone.position_encoding import build_position_encoding
+from models.GroundingDINO.backbone.swin_transformer import build_swin_transformer
 
 
 

@@ -1,5 +1,5 @@
-import os
 import argparse
+import os
 import json
 
 def coco_to_odvg(coco_file_path, odvg_output_path):
@@ -73,20 +73,34 @@ def coco_to_odvg(coco_file_path, odvg_output_path):
         
     print(f"\n Conversion complete, saved ODVG data to: {odvg_output_path}")
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Convert COCO JSON to ODVG JSONL format.")
-    parser.add_argument("--coco-path", type=str, help="Path to the input COCO JSON file")
-    
-    args = parser.parse_args()
-    
-    # Get input path from arguments
-    coco_path = args.coco_path
-    
-    # Derive output path (same directory, same name, different extension)
-    # splits 'folder/file.json' into 'folder/file' and '.json'
-    base_name, _ = os.path.splitext(coco_path)
-    odvg_path = f"{base_name}_odvg.jsonl"
-    
-    # 3. Run the conversion
-    coco_to_odvg(coco_path, odvg_path)
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--data_dir",
+        type=str,
+        required=True,
+        help="Directory containing COCO JSON input and where output will be saved"
+    )
+
+    parser.add_argument(
+        "--input_name",
+        type=str,
+        default="nwpu_train_class_split.json",
+        help="Input COCO JSON filename"
+    )
+
+    parser.add_argument(
+        "--output_name",
+        type=str,
+        default="train_class_split_curated_odvg.jsonl",
+        help="Output ODVG JSONL filename"
+    )
+
+    args = parser.parse_args()
+
+    coco_path = os.path.join(args.data_dir, args.input_name)
+    odvg_path = os.path.join(args.data_dir, args.output_name)
+
+    coco_to_odvg(coco_path, odvg_path)

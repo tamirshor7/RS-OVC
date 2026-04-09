@@ -13,12 +13,12 @@ from scipy.stats import bernoulli
 import matplotlib.pyplot as plt
 
 # Internal Utilities
-import CountGD.util.misc as utils
-from CountGD.util.utils import to_device
-from CountGD.util.visualizer import renorm
-from CountGD.util.misc import nested_tensor_from_tensor_list
-from CountGD.datasets_inference.cocogrounding_eval import CocoGroundingEvaluator
-from CountGD.datasets_inference.transforms import RandomResize
+import util.misc as utils
+from util.utils import to_device
+from util.visualizer import renorm
+from util.misc import nested_tensor_from_tensor_list
+from datasets.cocogrounding_eval import CocoGroundingEvaluator
+from datasets.transforms import RandomResize
 
 # External Dependencies
 from segment_anything import sam_model_registry, SamPredictor

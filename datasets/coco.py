@@ -11,9 +11,9 @@ import torch
 import torchvision
 from pycocotools import mask as coco_mask
 
-from CountGD.datasets_inference.data_util import preparing_dataset
-import CountGD.datasets_inference.transforms as T
-from CountGD.util.box_ops import box_cxcywh_to_xyxy, box_iou
+from datasets.data_util import preparing_dataset
+import datasets.transforms as T
+from util.box_ops import box_cxcywh_to_xyxy, box_iou
 
 __all__ = ["build"]
 

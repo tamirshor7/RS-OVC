@@ -13,31 +13,17 @@ from collections import OrderedDict
 
 from torch.utils.data import DataLoader, DistributedSampler, ConcatDataset
 
-# --- Repository Path Injection ---
-def _initialize_repo_path(repo_dir="CountGD"):
-    """
-    Ensures the repository directory is in the system path to allow internal module resolution.
-    """
-    abs_repo_path = os.path.abspath(repo_dir)
-    if not os.path.exists(abs_repo_path):
-        print(f"[Warning] Repository folder '{repo_dir}' not found in current directory: {os.getcwd()}")
-        return
 
-    if abs_repo_path not in sys.path:
-        sys.path.insert(0, abs_repo_path)
-        print(f"[Info] Added '{abs_repo_path}' to sys.path")
 
-# Inject path immediately
-_initialize_repo_path("CountGD")
 
 # --- Internal Imports ---
 
-import CountGD.util.misc as utils
-from CountGD.util.get_param_dicts import get_param_dict
-from CountGD.util.logger import setup_logger
-from CountGD.util.slconfig import DictAction, SLConfig
-from CountGD.util.utils import BestMetricHolder
-from CountGD.groundingdino.util.utils import clean_state_dict
+import util.misc as utils
+from util.get_param_dicts import get_param_dict
+from util.logger import setup_logger
+from util.slconfig import DictAction, SLConfig
+from util.utils import BestMetricHolder
+from groundingdino.util.utils import clean_state_dict
 from datasets import build_dataset, get_coco_api_from_dataset
 from engine import evaluate, train_one_epoch
 
@@ -86,13 +72,13 @@ def parse_cli_arguments():
     parser = argparse.ArgumentParser("RS-OVC Experiment Runner", add_help=False)
     
     # Config and options
-    parser.add_argument("--config_file", "-c", type=str, default="/home/tamirshor_google_com/CountGD/config/cfg_fndd.py")
+    parser.add_argument("--config_file", "-c", type=str, default="config/cfg_fndd.py")
     parser.add_argument("--options", nargs="+", action=DictAction, help="Override config settings (key=value)")
     parser.add_argument("--output_dir", default="out_rsovc", help="Directory for saving results")
     parser.add_argument("--note", default="", help="Experiment notes")
     
     # Dataset settings
-    parser.add_argument("--datasets", type=str, default="/home/tamirshor_google_com/CountGD/config/datasets_shared_fndd.json")
+    parser.add_argument("--datasets", type=str, default="config/datasets_shared_fndd.json")
     parser.add_argument("--no_text", action="store_true")
     parser.add_argument("--num_exemplars", default=3, type=int)
     parser.add_argument("--remove_difficult", action="store_true")
@@ -105,7 +91,7 @@ def parse_cli_arguments():
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--seed", default=42, type=int)
     parser.add_argument("--resume", default="", help="Path to checkpoint to resume from")
-    parser.add_argument("--pretrain_model_path", default="/home/tamirshor_google_com/RS-OVC/checkpoints/checkpoint_fsc147_best.pth")
+    parser.add_argument("--pretrain_model_path", default="checkpoints/checkpoint_fsc147_best.pth")
     parser.add_argument("--finetune_ignore", type=str, nargs="+")
     parser.add_argument("--start_epoch", default=0, type=int, metavar="N")
     parser.add_argument("--num_workers", default=8, type=int)

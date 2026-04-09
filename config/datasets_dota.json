@@ -1,7 +1,7 @@
 {
   "train": [
     {
-      "root": "data/DOTA/shared_images",
+      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/DOTA/shared_images",
       "anno": "data/DOTA/train_class_split_curated_odvg.jsonl",
       "label_map": "data/dota_label_map.json",
       "dataset_mode": "odvg"
@@ -9,7 +9,7 @@
   ],
   "val": [
     {
-      "root": "data/DOTA/shared_images",
+      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/DOTA/shared_images",
       "anno": "data/DOTA/dota_test_class_split.json",
       "label_map": "data/dota_label_map.json",
       "dataset_mode": "coco"

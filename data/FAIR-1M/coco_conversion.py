@@ -4,6 +4,7 @@ import math
 from copy import deepcopy
 from typing import List, Dict
 import pandas as pd
+import argparse
 
 
 # The rescale_bbox_to_area_four function remains exactly the same.
@@ -240,15 +241,38 @@ def convert_fair1m_to_coco_class_split(
     return {'train': coco_train, 'test': coco_test}
 
 # --- EXAMPLE USAGE ---
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
 
-FAIR1M_TEST_CLASSES = [
-    'truck','boat', 'airplane', 'baseball field','tractor'
-]
+    parser.add_argument(
+        "--fair1m_root",
+        type=str,
+        required=True,
+        help="Path to FAIR-1M dataset root containing labels.parquet"
+    )
 
+    parser.add_argument(
+        "--min_instances",
+        type=int,
+        default=4,
+        help="Minimum instances per class per image"
+    )
 
-LABELS_FILE = "labels.parquet"
-convert_fair1m_to_coco_class_split(
-    labels_parquet_path=LABELS_FILE,
-    test_classes=FAIR1M_TEST_CLASSES,
-    min_instance_per_class=4
-)
+    parser.add_argument(
+        "--test_classes",
+        nargs="+",
+        default=["truck", "boat", "airplane", "baseball field", "tractor"],
+        help="Consolidated classes assigned to the test split"
+    )
+
+    args = parser.parse_args()
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    labels_file = os.path.join(args.fair1m_root, "labels.parquet")
+
+    convert_fair1m_to_coco_class_split(
+        labels_parquet_path=labels_file,
+        test_classes=args.test_classes,
+        output_dir=script_dir,
+        min_instance_per_class=args.min_instances
+    )

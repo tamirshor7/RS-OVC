@@ -8,6 +8,7 @@ import cv2
 from copy import deepcopy
 from typing import List, Dict
 from tqdm import tqdm
+import argparse
 
 # --- Replicating Necessary Functions ---
 
@@ -241,12 +242,48 @@ def convert_rsoc_to_coco(
 
 # --- EXAMPLE USAGE (Manual Setup) ---
 
-# The data root should contain the RSOC building data
-RSOC_DATA_ROOT = '.' 
 
-convert_rsoc_to_coco(
-    rsoc_root_dir=RSOC_DATA_ROOT,
-    output_dir='.',
-    fixed_bbox_size=16,
-    min_instance_per_class=4
-)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Convert RSOC Building dataset to COCO format")
+
+    parser.add_argument(
+        "--rsocb_root",
+        type=str,
+        required=True,
+        help="Path to RSOC-Building root directory"
+    )
+
+    parser.add_argument(
+        "--output_dir",
+        type=str,
+        default=None,
+        help="Where to save output JSONs (default: script directory)"
+    )
+
+    parser.add_argument(
+        "--fixed_bbox_size",
+        type=int,
+        default=16
+    )
+
+    parser.add_argument(
+        "--min_instances",
+        type=int,
+        default=4
+    )
+
+    args = parser.parse_args()
+
+    # default output = script directory (same pattern as your other converters)
+    if args.output_dir is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        output_dir = script_dir
+    else:
+        output_dir = args.output_dir
+
+    convert_rsoc_to_coco(
+        rsoc_root_dir=args.rsocb_root,
+        output_dir=output_dir,
+        fixed_bbox_size=args.fixed_bbox_size,
+        min_instance_per_class=args.min_instances
+    )
