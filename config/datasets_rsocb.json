@@ -1,23 +1,23 @@
 {
   "train": [
       {
-      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/RSOC_building/building/shared_images",
-      "anno": "../data/RSOC_building/building/train_curated_rsocb_odvg.jsonl",
-      "label_map": "../data/rsocb_label_map.json",
+      "root": "data/RSOC_building/shared_images",
+      "anno": "data/RSOC_building/train_curated_rsocb_odvg.jsonl",
+      "label_map": "data/rsocb_label_map.json",
       "dataset_mode": "odvg"
     }
   ],
   "val": [
   {
-      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/RSOC_building/building/shared_images",
-      "anno": "../data/RSOC_building/building/rsoc_test.json",
-      "label_map": "../data/rsocb_label_map.json",
+      "root": "data/RSOC_building/shared_images",
+      "anno": "data/RSOC_building/rsoc_test.json",
+      "label_map": "data/rsocb_label_map.json",
       "dataset_mode": "coco"
     },
     {
-      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/RSOC_building/building/shared_images",
-      "anno": "../data/RSOC_building/building/rsoc_train.json",
-      "label_map": "../data/rsocb_label_map.json",
+      "root": "data/RSOC_building/shared_images",
+      "anno": "data/RSOC_building/rsoc_train.json",
+      "label_map": "data/rsocb_label_map.json",
       "dataset_mode": "coco"
     }
   ]
