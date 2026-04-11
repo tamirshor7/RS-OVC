@@ -1,26 +1,26 @@
 {
   "train": [
     {
-      "root": "<FAIR-1M root>/shared_images",
+      "root": "data/FAIR-1M/shared_images",
       "anno": "data/FAIR-1M/train_class_split_curated_odvg.jsonl",
       "label_map": "data/fair_label_map_split.json",
       "dataset_mode": "odvg"
     },
 
     {
-      "root": "<NWPU-MOC root>/rgb",
+      "root": "data/NWPU-MOC/rgb",
       "anno": "data/NWPU-MOC/train_class_split_curated_odvg.jsonl",
       "label_map": "data/nwpu_label_map.json",
       "dataset_mode": "odvg"
     },
     {
-      "root": "<DOTA root>/shared_images",
+      "root": "data/DOTA/shared_images",
       "anno": "data/DOTA/train_class_split_curated_odvg.jsonl",
       "label_map": "data/dota_label_map.json",
       "dataset_mode": "odvg"
     },
     {
-      "root": "<DIOR root>/shared_images",
+      "root": "data/DIOR/shared_images",
       "anno": "data/DIOR/train_class_split_curated_odvg.jsonl",
       "label_map": "data/dior_label_map.json",
       "dataset_mode": "odvg"
@@ -28,25 +28,25 @@
   ],
   "val": [
     {
-      "root": "<FAIR-1M root>/shared_images",
+      "root": "data/FAIR-1M/shared_images",
       "anno": "data/FAIR-1M/fair1m_test_class_split.json",
       "label_map": "data/fair_label_map_split.json",
       "dataset_mode": "coco"
     },
     {
-      "root": "<NWPU-MOC root>/rgb",
+      "root": "data/NWPU-MOC/rgb",
       "anno": "data/NWPU-MOC/nwpu_test_class_split.json",
       "label_map": "data/nwpu_label_map.json",
       "dataset_mode": "coco"
     },
     {
-      "root": "<DOTA root>/shared_images",
+      "root": "data/DOTA/shared_images",
       "anno": "data/DOTA/dota_test_class_split.json",
       "label_map": "data/dota_label_map.json",
       "dataset_mode": "coco"
     },
     {
-      "root": "<DIOR root>/shared_images",
+      "root": "data/DIOR/shared_images",
       "anno": "data/DIOR/dior_test_class_split.json",
       "label_map": "data/dior_label_map.json",
       "dataset_mode": "coco"
