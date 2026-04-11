@@ -1,7 +1,7 @@
 {
   "train": [
     {
-      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/FAIR-1M/shared_images",
+      "root": "data/FAIR-1M/shared_images",
       "anno": "data/FAIR-1M/train_class_split_curated_odvg.jsonl",
       "label_map": "data/fair_label_map_split.json",
       "dataset_mode": "odvg"
@@ -9,7 +9,7 @@
   ],
   "val": [
     {
-      "root": "/mnt/walkure_public/users/tamirs/counting_datasets/Remote-Sensing/FAIR-1M/shared_images",
+      "root": "data/FAIR-1M/shared_images",
       "anno": "data/FAIR-1M/fair1m_test_class_split.json",
       "label_map": "data/fair_label_map_split.json",
       "dataset_mode": "coco"
