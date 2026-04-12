@@ -11,7 +11,7 @@ Pytorch Implementation for the paper RS-OVC: Open-Vocabulary Counting for Remote
 Correspondence to: **[tamir.shor@campus.technion.ac.il](mailto:tamir.shor@campus.technion.ac.il)**
 
 
-arXiv: *[add link]*
+arXiv: *a link will be added soon*
 
 ---
 
