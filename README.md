@@ -11,7 +11,7 @@ Pytorch Implementation for the paper RS-OVC: Open-Vocabulary Counting for Remote
 Correspondence to: **[tamir.shor@campus.technion.ac.il](mailto:tamir.shor@campus.technion.ac.il)**
 
 
-arXiv: *a link will be added soon*
+arXiv preprint: [[pdf]](https://arxiv.org/pdf/2604.08704)
 
 ---
 
@@ -257,10 +257,10 @@ We thank the authors for publicly-releasing their code and enabling our work to 
 
 ```bibtex
 @inproceedings{shor2026rsovc,
-  title={RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data},
-  author={Shor, Tamir and Leifman, George and Beryozkin, Genady},
-  booktitle={ICPR},
-  year={2026}
+  title     = {RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data},
+  author    = {Shor, Tamir and Leifman, George and Beryozkin, Genady},
+  booktitle = {Proceedings of the International Conference on Pattern Recognition (ICPR)},
+  year      = {2026},
 }
 ```
 
