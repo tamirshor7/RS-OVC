@@ -261,7 +261,7 @@ We thank the authors for publicly-releasing their code and enabling our work to 
   author={Shor, Tamir and Leifman, George and Beryozkin, Genady},
   journal={arXiv preprint arXiv:2604.08704},
   year={2026}
-}}
+}
 ```
 
 
