@@ -256,12 +256,12 @@ We thank the authors for publicly-releasing their code and enabling our work to 
 ## Citation
 
 ```bibtex
-@inproceedings{shor2026rsovc,
-  title     = {RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data},
-  author    = {Shor, Tamir and Leifman, George and Beryozkin, Genady},
-  booktitle = {Proceedings of the International Conference on Pattern Recognition (ICPR)},
-  year      = {2026},
-}
+@article{shor2026rs,
+  title={RS-OVC: Open-Vocabulary Counting for Remote-Sensing Data},
+  author={Shor, Tamir and Leifman, George and Beryozkin, Genady},
+  journal={arXiv preprint arXiv:2604.08704},
+  year={2026}
+}}
 ```
 
 
